@@ -1,5 +1,7 @@
 # Nixfiles - A full desktop, powered by Nix
 
+![Screenshot](./screenshots/neofetch.png)
+
 ## Install
 
 0. Follow the [NixOS installation manual](https://nixos.org/manual/nixos/stable/) up until chapter 2.3
