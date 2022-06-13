@@ -54,6 +54,8 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - The first password is `nixfiles`. Change it with `passwd` after the first login when installed
 
+- `picom` may cause problems
+
 ## Resources
 
 - [Package/option search for NixOS](https://search.nixos.org)

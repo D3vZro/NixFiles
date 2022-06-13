@@ -127,7 +127,7 @@
     };
 
     picom = {
-      enable = false;
+      enable = true;
       blur = true;
       shadow = false;
       vSync = false;
