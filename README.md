@@ -52,7 +52,7 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - Username is defined in `flake.nix` and `modules/default.nix`. Default is `zero`
 
-- The first password is `nixfiles`. Change it with `passwd` after the first login when installed
+- The default password is `nixfiles`. Change it with `passwd` after the first login when installed
 
 - `picom` may cause problems
 
