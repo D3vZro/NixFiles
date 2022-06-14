@@ -50,6 +50,8 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - Aliases are found in `zsh.nix`
 
+- Define your git config in `modules/home-manager/pkgs/git.nix`
+
 - Username is defined in `flake.nix` and `modules/default.nix`. Default is `zero`
 
 - The default password is `nixfiles`. Change it with `passwd` after the first login when installed
