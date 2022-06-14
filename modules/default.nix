@@ -112,22 +112,6 @@ in {
       ./home-manager/home.nix
     ];
     
-    programs.texlive = {
-      enable = true;
-
-      extraPackages = customLatex: {
-        inherit (pkgs.texlive)
-        scheme-medium
-        enumitem
-        chemfig
-        csquotes
-        moderncv
-        fontawesome5
-        multirow
-        arydshln;
-      };
-    };
-
     home.packages = with pkgs; [
       # virt-manager # For KVM/QEMU virtualisation, activate if qemu is used
       playerctl
