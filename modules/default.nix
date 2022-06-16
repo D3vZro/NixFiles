@@ -4,7 +4,7 @@ let
 in {
   imports = [
     ./services.nix
-    ./zsh.nix
+    ./env.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -109,6 +109,7 @@ in {
       ./home-manager/pkgs/git.nix
       ./home-manager/pkgs/rofi.nix
       ./home-manager/pkgs/zathura.nix
+      ./home-manager/pkgs/starship.nix
       ./home-manager/home.nix
     ];
     

@@ -1,17 +1,36 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    histSize = 2000;
-    autosuggestions.enable = true;
+  programs = {
+    thefuck.enable = true;
 
-    promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    shellInit = "POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true";
+    bash.promptInit = ''
+      eval "$(starship init bash)"
+    '';
 
-    ohMyZsh = {
+    zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+      histSize = 2500;
+
+      promptInit = ''
+        eval "$(starship init zsh)"
+      '';
+
+      setOptions = [
+        "AUTO_CD"
+      ];
+    };
+  };
+
+  environment = {
+    pathsToLink = [ "/share/zsh" ];
+
+    variables = {
+      EDITOR = "nvim";
+      TERM = "alacritty";
     };
 
     shellAliases = {
