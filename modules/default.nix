@@ -95,11 +95,10 @@ in {
     killall
     xclip
     xorg.xkill
-    zsh-powerlevel10k
     ranger
-    neofetch
+    # neofetch # Poser software
     gotop
-    tealdeer
+    # tealdeer # Alternative to man pages
   ];
 
   home-manager.users.${username} = { config, pkgs, lib, ... }: {

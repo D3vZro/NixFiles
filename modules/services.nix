@@ -3,7 +3,7 @@
 {
   programs = {
     dconf.enable = true;
-    geary.enable = true;
+    # geary.enable = true; # My recommended mailclient
 
     gnupg = {
       dirmngr.enable = true;
