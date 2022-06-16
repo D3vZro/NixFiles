@@ -28,7 +28,7 @@ in {
 
     users.${username} = {
       isNormalUser = true;
-      initialPassword = "nixfiles"
+      initialPassword = "nixfiles";
       home = "/home/${username}";
       useDefaultShell = true;
       extraGroups = [ "wheel" "video" "networkmanager" "libvirtd" ];
