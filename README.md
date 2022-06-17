@@ -40,7 +40,7 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - Launcher: `rofi`
 
-- Terminal: `zsh` with `alacritty`
+- Terminal: `zsh` + `starship` with `alacritty`
 
 - Editors: `neovim` (`nano` is also installed)
 
