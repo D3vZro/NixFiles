@@ -38,12 +38,6 @@ git add .
 
 8. After login, clone the repo into `$HOME`, e.g. into `$HOME/.nix` for updates/changes
 
-## Maintenance
-
-- Updating the lock file: `nix flake update`
-
-- Rebuilding the system: `nixos-rebuild switch .#HOSTNAME`
-
 ## Components
 
 Component|Usage|Notes
@@ -74,10 +68,12 @@ Component|Usage|Notes
 
 - [Official documentation](https://nixos.org/learn.html)
 
-- [Package/option search for NixOS](https://search.nixos.org)
+- [Unofficial wiki](https://nixos.wiki/)
 
 - [Home-manager manual](https://rycee.gitlab.io/home-manager/)
 
-- [Unofficial wiki page about flakes](https://nixos.wiki/wiki/Flakes)
-
 - [awesome-nix](https://github.com/nix-community/awesome-nix)
+
+- [Package/option search for NixOS](https://search.nixos.org)
+
+
