@@ -48,6 +48,8 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - If `polybar` has its workspaces missing, restart the service by `ctrl + alt + r`
 
+  - Also change the locale of the bar (`config.ini`)
+
 - Aliases are found in `zsh.nix`
 
 - Define your git config in `modules/home-manager/pkgs/git.nix`
