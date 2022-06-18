@@ -28,31 +28,41 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 5. Edit `flake.nix` (See examples: `nix-laptop` and `nix-notebook`)
 
-6. Commit your changes
+6. Add your changes, a commit is optional
 
-7. Install with `# nixos-install --flake .#HOSTNAME` and reboot
+```
+git add .
+```
+
+7. Install with `# nixos-install --flake .#HOSTNAME`, type a root password and reboot
+
+8. After login, clone the repo into `$HOME`, e.g. into `$HOME/.nix` for updates/changes
+
+## Maintenance
+
+- Updating the lock file: `nix flake update`
+
+- Rebuilding the system: `nixos-rebuild switch .#HOSTNAME`
 
 ## Components
 
-- `nix` + `home-manager` + `flakes`
-
-- Window manager: `bspwm` 
-
-- Keyboard shortcuts: `sxhkd`
-
-- Launcher: `rofi`
-
-- Terminal: `zsh` + `starship` with `alacritty`
-
-- Editors: `neovim` (`nano` is also installed)
+Component|Usage|Notes
+---------|-----|-----
+`NixOS + flakes + home-manager`|Operating system|See resources below
+`zsh + starship`|Shell|
+`neovim`|Editor|`nano` is always installed
+`bspwm`|Window manager|
+`sxhkd`|Hotkey manager|
+`picom`|Compositor|Can cause performance loss
+`alacritty`|Terminal emulator|Access with `super + enter`
+`polybar`|Status bar|If workspaces are missing, reload with `ctrl + alt + r`
+`rofi`|Launcher/Calculator/File browser|
+`ranger`|CLI file browser|
+`thunar`|GUI file browser|
 
 ## Quirks
 
-- If `polybar` has its workspaces missing, restart the service by `ctrl + alt + r`
-
-  - Also change the locale of the bar (`config.ini`)
-
-- Aliases are found in `zsh.nix`
+- Aliases are found in `env.nix`
 
 - Define your git config in `modules/home-manager/pkgs/git.nix`
 
@@ -60,12 +70,14 @@ $ rm ./machines/HOSTNAME/configuration.nix
 
 - The default password is `nixfiles`. Change it with `passwd` after the first login when installed
 
-- `picom` may cause problems
-
 ## Resources
+
+- [Official documentation](https://nixos.org/learn.html)
 
 - [Package/option search for NixOS](https://search.nixos.org)
 
 - [Home-manager manual](https://rycee.gitlab.io/home-manager/)
+
+- [Unofficial wiki page about flakes](https://nixos.wiki/wiki/Flakes)
 
 - [awesome-nix](https://github.com/nix-community/awesome-nix)
