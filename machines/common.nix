@@ -13,10 +13,10 @@
     cpu.amd.updateMicrocode = true;
     enableRedistributableFirmware = true;
 
-    bluetooth = {
-      enable = true;
-      powerOnBoot = false;
-    };
+    # bluetooth = {
+      # enable = true;
+      # powerOnBoot = false;
+    # };
   };
 
   time = {

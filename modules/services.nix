@@ -37,7 +37,7 @@
     gnome.gnome-keyring.enable = true;
     autorandr.enable = true;
     geoclue2.enable = true;
-    blueman.enable = true;
+    # blueman.enable = true; # Use, if bluetooth in machines/common.nix is enabled
 
     # openssh = {
     #   enable = true;
