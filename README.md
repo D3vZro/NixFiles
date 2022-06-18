@@ -18,7 +18,7 @@ $ git clone REPO
 2. Generate `hardware-configuration.nix` inside a folder of the `machines` directory
 
 ```
-$ cd NIXFILES
+$ cd REPO
 $ mkdir ./machines/HOSTNAME
 $ nixos-generate-config --root /mnt --dir ./machines/HOSTNAME
 $ rm ./machines/HOSTNAME/configuration.nix
