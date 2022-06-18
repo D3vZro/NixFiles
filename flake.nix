@@ -114,6 +114,8 @@
           ./machines/HOSTNAME/hardware-configuration.nix
 
           ({ config, pkgs, lib, ... }: {
+            networking.hostName = HOSTNAME;
+            services.xserver.videoDrivers = [  ]; # Your video driver
             # Include host-specific stuff here
           })
         ];
