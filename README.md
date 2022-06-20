@@ -70,7 +70,7 @@ Component|Usage|Notes
 
 - [Unofficial wiki](https://nixos.wiki/)
 
-- [Home-manager manual](https://rycee.gitlab.io/home-manager/)
+- [Home-manager manual](https://nix-community.github.io/home-manager/)
 
 - [awesome-nix](https://github.com/nix-community/awesome-nix)
 
