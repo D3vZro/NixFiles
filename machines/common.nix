@@ -10,7 +10,7 @@
   };
 
   hardware = {
-    cpu.amd.updateMicrocode = true;
+    # cpu.amd.updateMicrocode = true; # Change to your CPU manufacturer
     enableRedistributableFirmware = true;
 
     # bluetooth = {
