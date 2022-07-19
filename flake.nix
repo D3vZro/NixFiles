@@ -22,6 +22,7 @@
       ];
     in {
     nixosConfigurations = {
+      # Example 1: Desktop with a NVIDIA GPU and QEMU/KVM support
       nix-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
 
@@ -52,6 +53,7 @@
         ];
       };
 
+      # Example 2: AMD Notebook
       nix-notebook = nixpkgs.lib.nixosSystem {
         inherit system;
 
@@ -62,8 +64,6 @@
             networking.hostName = "nix-notebook";
             services.xserver.videoDrivers = [ "amdgpu" ];
             networking.networkmanager.wifi.powersave = true;
-            programs.steam.enable = true;
-            services.picom.backend = pkgs.lib.mkForce "glx";
 
             boot = {
               kernelModules = [ "acpi_call" ];
@@ -95,6 +95,7 @@
 
             home-manager.users.${username} = { config, pkgs, ...}: {
               programs.alacritty.settings.font.size = pkgs.lib.mkForce 6;
+              services.picom.backend = pkgs.lib.mkForce "glx";
 
               services.polybar.extraConfig = pkgs.lib.mkForce ''
                 [bar/main]
