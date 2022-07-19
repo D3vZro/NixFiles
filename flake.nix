@@ -44,9 +44,9 @@
             };
 
             home-manager.users.${username} = { config, pkgs, ...}: {
-              services.picom.extraOptions = ''
+              services.picom.settings = {
                 xrender-sync-fence = true;
-              '';
+              };
             };
           })
         ];
@@ -63,6 +63,7 @@
             services.xserver.videoDrivers = [ "amdgpu" ];
             networking.networkmanager.wifi.powersave = true;
             programs.steam.enable = true;
+            services.picom.backend = pkgs.lib.mkForce "glx";
 
             boot = {
               kernelModules = [ "acpi_call" ];

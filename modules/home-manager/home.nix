@@ -128,22 +128,18 @@
 
     picom = {
       enable = true;
-      blur = true;
+      backend = "xr_glx_hybrid";
       shadow = false;
       vSync = false;
-      backend = "xr_glx_hybrid";
 
-      fade = true; # Effects
+      fade = true;
       fadeDelta = 3;
-      fadeSteps = [ "0.028" "0.03" ];
+      fadeSteps = [0.028 0.03];
 
-      opacityRule = [
-      "97:class_g = 'Alacritty'"
-      "99:class_g = 'Spotify'"
-      "99:class_g = 'discord'"
-      "99:class_g = 'Code'"
-      "98:class_g = 'GitHub Desktop'"
-      "98:class_g = 'Thunar'"
+      opacityRules = [
+        "97:class_g = 'Alacritty'"
+        "99:class_g = 'Code'"
+        "98:class_g = 'Thunar'"
       ];
     };
 
