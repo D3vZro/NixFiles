@@ -33,11 +33,12 @@
 
   services = {
     # fstrim.enable = true; # For SSDs
+    # geoclue2.enable = true;
+    # blueman.enable = true; # Use, if bluetooth in machines/common.nix is enabled
     acpid.enable = true;
     gnome.gnome-keyring.enable = true;
     autorandr.enable = true;
-    geoclue2.enable = true;
-    # blueman.enable = true; # Use, if bluetooth in machines/common.nix is enabled
+    udisks2.enable = true; # Dependency of home-manager/services.udiskie
 
     # openssh = {
     #   enable = true;
