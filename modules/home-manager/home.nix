@@ -85,10 +85,10 @@
     playerctld.enable = true;
     network-manager-applet.enable = true;
 
-    redshift = {
-      enable = true;
-      provider = "geoclue2";
-    };
+    # redshift = {
+    #  enable = true;
+    #  provider = "geoclue2";
+    # };
 
     betterlockscreen = {
       enable = true;
