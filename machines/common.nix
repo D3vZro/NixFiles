@@ -11,6 +11,7 @@
 
   hardware = {
     # cpu.amd.updateMicrocode = true; # Change to your CPU manufacturer
+    pulseaudio.enable = false;
     enableRedistributableFirmware = true;
 
     # bluetooth = {
