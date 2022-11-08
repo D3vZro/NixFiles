@@ -48,6 +48,7 @@
               services.picom.settings = {
                 xrender-sync-fence = true;
               };
+              home.packages = with pkgs; [ virt-manager ];
             };
           })
         ];

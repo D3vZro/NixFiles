@@ -113,7 +113,6 @@ in {
     ];
     
     home.packages = with pkgs; [
-      # virt-manager # For KVM/QEMU virtualisation, activate if qemu is used
       playerctl
       pamixer
       betterlockscreen
