@@ -34,10 +34,10 @@
       font = {
         size = 9;
         
-        normal.family = "JetBrainsMono Nerd Font";
-        bold.family = "JetBrainsMono Nerd Font";
-        italic.family = "JetBrainsMono Nerd Font";
-        bold_italic.family = "JetBrainsMono Nerd Font";
+        normal.family = "JetBrains Mono";
+        bold.family = "JetBrains Mono";
+        italic.family = "JetBrains Mono";
+        bold_italic.family = "JetBrains Mono";
       };
 
       # Nord colorscheme, see https://github.com/arcticicestudio/nord-alacritty

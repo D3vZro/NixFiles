@@ -83,12 +83,23 @@ in {
     };
   };
 
-  fonts.fonts = with pkgs; [
-    nerdfonts
-    noto-fonts
-    source-code-pro
-    sarasa-gothic
-  ];
+  fonts = {
+    fontDir.enable = true;
+
+    fonts = with pkgs; [
+      (nerdfonts.override {
+        fonts = [
+          "BitstreamVeraSansMono"
+          "NerdFontsSymbolsOnly"
+        ];
+      })
+      iosevka
+      jetbrains-mono
+      noto-fonts
+      sarasa-gothic
+      source-code-pro
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     wget
