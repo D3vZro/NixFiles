@@ -24,6 +24,7 @@
 
   home = {
     keyboard = null;
+    stateVersion = "22.05";
 
     pointerCursor = {
       package = pkgs.capitaine-cursors;

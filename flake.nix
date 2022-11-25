@@ -2,7 +2,7 @@
   description = "A complete NixOS configuration for day-to-day use";
   
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -110,19 +110,19 @@
       };
       
       # Bare minimum
-      HOSTNAME = nixpkgs.lib.nixosSystem {
-        inherit system;
+      # HOSTNAME = nixpkgs.lib.nixosSystem {
+      #   inherit system;
 
-        modules = share ++ [
-          ./machines/HOSTNAME/hardware-configuration.nix
+      #   modules = share ++ [
+      #     ./machines/HOSTNAME/hardware-configuration.nix
 
-          ({ config, pkgs, lib, ... }: {
-            networking.hostName = HOSTNAME;
-            services.xserver.videoDrivers = [  ]; # Your video driver
-            # Include host-specific stuff here
-          })
-        ];
-      };
+      #     ({ config, pkgs, lib, ... }: {
+      #       networking.hostName = HOSTNAME;
+      #       services.xserver.videoDrivers = [  ]; # Your video driver
+      #       # Include host-specific stuff here
+      #     })
+      #   ];
+      # };
     };
   };
 }
