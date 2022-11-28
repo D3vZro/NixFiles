@@ -64,6 +64,20 @@ Component|Usage|Notes
 
 - The default password is `nixfiles`. Change it with `passwd` after the first login when installed
 
+- Default input for nixpkgs is the current stable version. **Exception**: Towards the end of a
+  release cycle, `home-manager` might prevent a rebuild. Switch to `unstable` if it happens
+
+```
+# flake.nix
+
+inputs = {
+  nixpkgs.url = "nixpkgs/nixos-unstable";
+  .
+  # Other inputs
+  .
+};
+```
+
 ## Resources
 
 - [Official documentation](https://nixos.org/learn.html)
