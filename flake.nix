@@ -2,7 +2,7 @@
   description = "A complete NixOS configuration for day-to-day use";
   
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-22.11";
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -54,7 +54,7 @@
         ];
       };
 
-      # Example 2: AMD Notebook
+      # Example 2: AMD Notebook with touch gestures
       nix-notebook = nixpkgs.lib.nixosSystem {
         inherit system;
 
@@ -104,6 +104,30 @@
                 modules-center = 
                 modules-right = volume sep backlight sep battery sep time sep
               '';
+
+              services.fusuma = {
+                enable = true;
+                extraPackages = with pkgs; [
+                  coreutils
+                  bspwm
+                ];
+                settings = {
+                  threshold = {
+                    swipe = 0.1;
+                  };
+                  interval = {
+                    swipe = 0.2;
+                  };
+                  swipe = {
+                    "3" = { 
+                      left = { command = "bspc desktop -f prev.local"; };
+                      right = { command = "bspc desktop -f next.local"; };
+                      up = { command = ""; };
+                      down = { command = ""; };
+                    };
+                  };
+                };
+              };
             };
           })
         ];
