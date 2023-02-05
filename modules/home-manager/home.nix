@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-
   qt = {
     enable = true;
     platformTheme = "gtk";
@@ -86,6 +85,7 @@
     playerctld.enable = true;
     network-manager-applet.enable = true;
 
+    # Adjust colour temperatur for less eye strain
     # redshift = {
     #  enable = true;
     #  provider = "geoclue2";
@@ -195,7 +195,7 @@
         "XF86MonBrightnessUp" = "brightnessctl set +5%";
         "XF86MonBrightnessDown" = "brightnessctl set 5%-";
 
-        # Media keys for spotify
+        # Media keys
         "XF86AudioPlay" = "playerctl play-pause";
         "XF86AudioPrev" = "playerctl previous";
         "XF86AudioNext" = "playerctl next";
@@ -204,7 +204,7 @@
         "super + Print" = "scrot '%d.%m.%Y_$wx$h.png' -e 'mv $f ~/Bilder/'";
         "alt + Print" = "scrot -u '%d.%m.%Y_$wx$h.png' -e 'mv $f ~/Bilder/'";
 
-        # Debug options
+        # Options if something goes wrong
         "ctrl + alt + r" = "systemctl --user restart polybar.service";
         "ctrl + alt + q" = "xkill";
       };

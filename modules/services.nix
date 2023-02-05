@@ -19,7 +19,10 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    pam.services.lightdm.enableGnomeKeyring = true;
+    pam.services.lightdm = {
+      gnupg.enable = true;
+      enableGnomeKeyring = true;
+    };
   };
 
   networking = {
@@ -33,17 +36,12 @@
 
   services = {
     # fstrim.enable = true; # For SSDs
-    # geoclue2.enable = true;
+    # geoclue2.enable = true; # To enable for redshift
     # blueman.enable = true; # Use, if bluetooth in machines/common.nix is enabled
     acpid.enable = true;
     gnome.gnome-keyring.enable = true;
     autorandr.enable = true;
     udisks2.enable = true; # Dependency of home-manager/services.udiskie
-
-    # openssh = {
-    #   enable = true;
-    #   allowSFTP = true;
-    # };
 
     pipewire = {
       enable = true;
@@ -52,6 +50,11 @@
       pulse.enable = true;
       jack.enable = true;
     };
+
+    # openssh = {
+    #   enable = true;
+    #   allowSFTP = true;
+    # };
 
     # Printing services
     # printing = {

@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+# Config for Germany per default. Change to your location
 {
   system.stateVersion = "22.05";
   i18n.defaultLocale = "de_DE.UTF-8";
@@ -14,7 +15,8 @@
     pulseaudio.enable = false;
     enableRedistributableFirmware = true;
 
-    # bluetooth = {
+    # Depends on hardware
+    # bluetooth = { 
       # enable = true;
       # powerOnBoot = false;
     # };

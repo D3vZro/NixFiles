@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 
+# A general-purpose neovim-config I recommend
+
 {
   programs = {
-    # vscode.enable = true;
-
     neovim = {
       enable = true;
       viAlias = true;
@@ -11,7 +11,6 @@
 
       plugins = with pkgs.vimPlugins; [
         vim-nix
-        # statix
         vim-gitgutter
         vim-easymotion
         vim-surround
@@ -19,16 +18,6 @@
         vim-airline
         nord-vim
 
-        # Specific configs
-        { plugin = vimtex;
-          config = ''
-            syntax enable
-            filetype plugin indent on
-            nnoremap <C-c> :VimtexCompile<CR>
-            let g:tex_flavor='latex'
-            let g:vimtex_quickfix_mode=0
-          '';
-        }
         { plugin = vim-auto-save;
           config = ''
             let g:auto_save = 1

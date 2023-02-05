@@ -39,14 +39,11 @@
       gsu = "git submodule update";
       gca = "git commit -a";
 
-      gg = "cd ~/Git/";
-      ggm = "cd ~/Git/Markdown";
-      ggl = "cd ~/Git/LaTeX";
       nih = "cd ~/.nix/";
 
       gt = "gotop";
       aus = "systemctl poweroff";
-      stasis = "systemctl suspend";
+      sus = "systemctl suspend";
 
       nixgc = "sudo nix-collect-garbage";
       nixfu = "nix flake update";

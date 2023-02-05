@@ -10,11 +10,7 @@ in {
   nixpkgs.config.allowUnfree = true;
   home-manager.useGlobalPkgs = true;
   gtk.iconCache.enable = true;
-
-  environment.variables = {
-    EDITOR = "nvim";
-    TERM = "alacritty";
-  };
+  xdg.portal.enable = true;
 
   nix = {
     settings.auto-optimise-store = true;
@@ -31,7 +27,7 @@ in {
       initialPassword = "nixfiles";
       home = "/home/${username}";
       useDefaultShell = true;
-      extraGroups = [ "wheel" "video" "networkmanager" "libvirtd" ];
+      extraGroups = [ "wheel" "audio" "input" "video" "networkmanager"];
     };
   };
 
@@ -102,14 +98,26 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    # Essential packages
     wget
     killall
     xclip
     xorg.xkill
+    playerctl
+    feh
+    scrot
+    betterlockscreen
+    polkit_gnome
+    gnome.zenity
+    pamixer
+
+    # Useful, but not essential
+    easyeffects
+    firefox
+    xfce.thunar
+    viewnior
     ranger
-    # neofetch # Poser software
     gotop
-    # tealdeer # Alternative to man pages
   ];
 
   home-manager.users.${username} = { config, pkgs, lib, ... }: {
@@ -121,20 +129,6 @@ in {
       ./home-manager/pkgs/zathura.nix
       ./home-manager/pkgs/starship.nix
       ./home-manager/home.nix
-    ];
-    
-    home.packages = with pkgs; [
-      playerctl
-      pamixer
-      betterlockscreen
-      polkit_gnome
-      gnome.zenity
-      easyeffects
-      feh
-      scrot
-      firefox
-      xfce.thunar
-      viewnior
     ];
   };
 }
