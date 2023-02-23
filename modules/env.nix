@@ -34,20 +34,26 @@
     };
 
     shellAliases = {
-      gcl = "git clone";
-      gp = "git pull";
-      gsu = "git submodule update";
-      gca = "git commit -a";
+      g-cl = "git clone";
+      g-p = "git pull";
+      g-ca = "git commit -a";
 
-      nih = "cd ~/.nix/";
+      ch-g = "cd ~/Git/";
+      ch-gm = "cd ~/Git/Markdown";
+      ch-gl = "cd ~/Git/LaTeX";
+      ch-gf = "cd ~/Git/FOP";
 
-      gt = "gotop";
-      aus = "systemctl poweroff";
-      sus = "systemctl suspend";
+      wm-name = "xprop | grep WM_CLASS";
 
-      nixgc = "sudo nix-collect-garbage";
-      nixfu = "nix flake update";
-      nixls = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+      fl-update= "git pull && nix flake update";
+
+      os-monitor = "gotop";
+      os-update = "sudo nixos-rebuild switch --flake .#$HOST";
+      os-off = "systemctl poweroff";
+      os-suspend = "systemctl suspend";
+      os-config = "cd ~/.nix/";
+      os-gc = "sudo nix-collect-garbage";
+      os-lsgen = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
 
       ":q" = "exit";
     };
